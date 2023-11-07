@@ -10,7 +10,14 @@
 
 .reveal-closed {
 	overflow: hidden;
-	height: 240px;
+	height: 100px;
+}
+.label-rml{
+	    border: 1px solid;
+    padding: 2px;
+    margin: 5px 5px;
+    background: cornflowerblue;
+    color: white;
 }
 </style>
 
@@ -30,10 +37,16 @@
     the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", 
     comes from a line in section 1.10.32.
   </div>
-  
+  <label class="label-rml" id="roadmap">Read More...</label>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script>
-    $("#thediv").click(function() {
-      $("#roadmap").toggleClass("reveal-closed").toggleClass("reveal-open");
+    $("#roadmap").click(function() {
+      $("#thediv").toggleClass("reveal-closed").toggleClass("reveal-open");
+      if($(this).html()=='Read More...'){
+      	$(this).html('Read Less');
+      }else{
+      	$(this).html('Read More...');
+      }
     });
   </script>
 </body>
