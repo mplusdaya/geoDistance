@@ -1,0 +1,25 @@
+</div>
+<script type="text/javascript">
+    $(".s_meun").removeClass("active");
+
+    $(".student_enq_active").addClass("active");
+    
+    var table = $("#example").dataTable({
+        "pageLength": 10,
+        "serverSide": true,
+        "processing": true,
+        "order": [
+            [0, "desc"]
+        ],
+        "ajax": {
+            url: "<?php echo base_url('get-student-enquiry-data-table?' . $_SERVER['QUERY_STRING']) ?>",
+            type: 'POST'
+        },
+    });
+
+    function reload_table() {
+        table.DataTable().ajax.reload(null, false);
+    }
+
+
+</script>
